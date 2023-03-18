@@ -1,33 +1,34 @@
 #include <stdio.h>
 
 /**
- * main - Prints numbers between 00 to 99.
- *
- * Return: Always 0 (Success)
+ * main - Entry point
+ * Decription: print all possible
+ * different combinations of two digits
+ * Return: 0 (SUCCESS)
  */
+
 int main(void)
 {
-	int i, e;
-
-	i = 48;
-	e = 48;
-
-	while (e < 58)
+	int n1, n2;
+	n1 = '0';
+	while (n1 <= '9')
 	{
-		i = 48;
-		while (i < 58)
+		n2 = '0';
+		while (n2 <= '9')
 		{
-			putchar(e);
-			putchar(i);
-			if (i == 57 && e == 57)
+			if (n1 < n2 && n1 != n2)
 			{
-				break;
+				putchar(n1);
+				putchar(n2);
+				if ((n1 + n2) != 113)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			putchar(',');
-			putchar(' ');
-			i++;
+			n2++;
 		}
-		e++;
+		n1++;
 	}
 	putchar('\n');
 	return (0);
