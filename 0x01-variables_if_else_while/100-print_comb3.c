@@ -10,6 +10,7 @@
 int main(void)
 {
 	int n1, n2;
+
 	n1 = '0';
 	while (n1 <= '9')
 	{
