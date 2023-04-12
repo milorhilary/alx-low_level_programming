@@ -3,25 +3,28 @@
 
 /**
  * str_concat - concatenates two strings.
- * @s1: first string
- * @s2: second string
+ * @s1: first string.
+ * @s2: second string.
  *
  * Return: pointer of an array of chars
  */
 char *str_concat(char *s1, char *s2)
 {
 	char *strout;
-	unsigned int c, d, e, limit;
+	unsigned int i, j, k, limit;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	for (c = 0; s1[c] != '\0'; c++)
+	for (i = 0; s1[i] != '\0'; i++)
 		;
-	for (d = 0; s2[d] != '\0'; d++)
-		strout = malloc(sizeof(char) * (c + d + 1));
+
+	for (j = 0; s2[j] != '\0'; j++)
+		;
+
+	strout = malloc(sizeof(char) * (i + j + 1));
 
 	if (strout == NULL)
 	{
@@ -29,12 +32,12 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	for (e = 0; e < c; e++)
-		strout[e] = s1[e];
+	for (k = 0; k < i; k++)
+		strout[k] = s1[k];
 
-	limit = d;
-	for (d = 0; d <= limit; e++, d++)
-		strout[e] = s2[e];
+	limit = j;
+	for (j = 0; j <= limit; k++, j++)
+		strout[k] = s2[j];
 
 	return (strout);
 }
